@@ -33,7 +33,7 @@ public class CarController {
     }
 
     @PostMapping("/create")
-    public String createCar(@ModelAttribute Car car, RedirectAttributes redirectAttributes) {
+    public String createCar(@ModelAttribute("car") Car car, RedirectAttributes redirectAttributes) {
         carService.create(car);
         redirectAttributes.addFlashAttribute("message", "Create successfully!");
         return "redirect:http://localhost:8088/car/create";
